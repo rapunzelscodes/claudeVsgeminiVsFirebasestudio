@@ -1,0 +1,846 @@
+/* Global Styles & Variables */
+:root {
+    --primary-color: #0A192F; /* Deep Navy Blue */
+    --secondary-color: #172A45; /* Slightly Lighter Navy */
+    --accent-color: #64FFDA; /* Vibrant Teal/Mint */
+    --accent-hover-color: #52D8C9;
+    --text-color-primary: #CCD6F6; /* Light Slate */
+    --text-color-secondary: #8892B0; /* Slate */
+    --text-color-headings: #E6F1FF; /* Lighter for headings */
+    --background-light: #FFFFFF;
+    --card-background: #112240; /* Darker card background */
+    --border-color: #233554;
+
+    --font-primary: 'Poppins', sans-serif;
+    --font-secondary: 'Exo 2', sans-serif; /* For headings, logo */
+
+    --transition-speed: 0.3s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-primary);
+    background-color: var(--primary-color);
+    color: var(--text-color-primary);
+    line-height: 1.6;
+    font-size: 16px;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+}
+
+.container {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+h1, h2, h3, h4 {
+    font-family: var(--font-secondary);
+    color: var(--text-color-headings);
+    margin-bottom: 1rem;
+    line-height: 1.3;
+}
+
+h1 {
+    font-size: 3rem; /* Responsive later */
+    font-weight: 800;
+}
+
+h2 {
+    font-size: 2.5rem; /* Responsive later */
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background-color: var(--accent-color);
+    margin: 0.5rem auto 0;
+    border-radius: 2px;
+}
+
+h3 {
+    font-size: 1.75rem;
+    color: var(--accent-color);
+}
+
+p {
+    margin-bottom: 1rem;
+    color: var(--text-color-secondary);
+}
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    transition: color var(--transition-speed);
+}
+
+a:hover {
+    color: var(--accent-hover-color);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+section {
+    padding: 80px 0;
+}
+
+/* Navbar */
+.navbar {
+    background-color: rgba(10, 25, 47, 0.85); /* Semi-transparent primary */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 1rem 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: top 0.3s;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar .logo {
+    font-family: var(--font-secondary);
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--accent-color);
+}
+
+.navbar nav ul {
+    list-style: none;
+    display: flex;
+}
+
+.navbar nav ul li {
+    margin-left: 2rem;
+}
+
+.navbar nav ul li a {
+    color: var(--text-color-primary);
+    font-weight: 400;
+    padding: 0.5rem 0;
+    position: relative;
+}
+
+.navbar nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--accent-color);
+    transition: width var(--transition-speed);
+}
+
+.navbar nav ul li a:hover::after,
+.navbar nav ul li a.active::after {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none; /* Hidden on desktop */
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--text-color-primary);
+    margin: 5px 0;
+    transition: all var(--transition-speed);
+}
+
+/* Hero Section */
+.hero-section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 100px; /* Account for fixed navbar */
+    background: linear-gradient(rgba(10, 25, 47, 0.9), rgba(10, 25, 47, 0.95)), url('placeholder-hero-bg.jpg') no-repeat center center/cover; /* Placeholder BG */
+    position: relative;
+}
+
+.hero-section .container {
+    max-width: 800px;
+}
+
+.hero-section h1 {
+    color: var(--text-color-headings);
+    margin-bottom: 1.5rem;
+    animation: fadeInDown 1s ease-out;
+}
+
+.hero-section .subtitle {
+    font-size: 1.25rem;
+    color: var(--text-color-secondary);
+    margin-bottom: 2.5rem;
+    animation: fadeInUp 1s ease-out 0.3s;
+    animation-fill-mode: backwards; /* Start animation from hidden state */
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color var(--transition-speed), transform var(--transition-speed);
+    animation: fadeInUp 1s ease-out 0.6s;
+    animation-fill-mode: backwards;
+    border: 2px solid var(--accent-color);
+}
+
+.cta-button:hover {
+    background-color: var(--accent-hover-color);
+    color: var(--primary-color);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(100, 255, 218, 0.3);
+}
+
+/* Keyframe animations for hero */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Feature Section ("What It Can Do") */
+.feature-section {
+    background-color: var(--secondary-color);
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.feature-item {
+    background-color: var(--card-background);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid var(--border-color);
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.feature-item.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.feature-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.feature-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1rem;
+    /* Basic placeholder style if SVGs are not loaded */
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    display: inline-block;
+    padding: 10px; /* temp */
+}
+
+.feature-item h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+/* Impact Section ("How It Will Change Business") */
+.impact-section {
+    background-color: var(--primary-color);
+    text-align: center;
+}
+
+.impact-section .container {
+    max-width: 800px;
+}
+
+.impact-section p {
+    font-size: 1.15rem;
+    color: var(--text-color-primary);
+}
+
+/* Get Started Section ("How to Use") */
+.get-started-section {
+    background-color: var(--secondary-color);
+}
+
+.steps-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
+
+.step {
+    background-color: var(--card-background);
+    padding: 2rem;
+    border-radius: 8px;
+    text-align: center;
+    flex: 1;
+    border: 1px solid var(--border-color);
+    position: relative;
+    opacity: 0;
+    transform: translateY(20px);
+}
+
+.step.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease-out 0.2s, transform 0.5s ease-out 0.2s; /* Stagger animation */
+}
+
+.step:nth-child(2).visible { transition-delay: 0.4s; }
+.step:nth-child(3).visible { transition-delay: 0.6s; }
+
+
+.step-number {
+    width: 50px;
+    height: 50px;
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 auto 1rem;
+    font-family: var(--font-secondary);
+}
+
+.step h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.get-started-section .cta-button {
+    display: block;
+    width: fit-content;
+    margin: 2rem auto 0;
+}
+
+/* Testimonials Section */
+.testimonials-section {
+    background-color: var(--primary-color);
+}
+
+.testimonial-slider {
+    position: relative;
+    max-width: 700px;
+    margin: 2rem auto 0;
+    overflow: hidden; /* Important for basic slider */
+    min-height: 200px; /* Adjust as needed */
+}
+
+.testimonial {
+    background-color: var(--card-background);
+    padding: 2rem;
+    border-radius: 8px;
+    border-left: 5px solid var(--accent-color);
+    margin-bottom: 1rem; /* For non-JS or if slider fails */
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+    /* JS will handle display: block/none for active */
+}
+.testimonial.visible { /* For initial load if JS is slow */
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+.testimonial p {
+    font-style: italic;
+    font-size: 1.1rem;
+    color: var(--text-color-primary);
+    margin-bottom: 1rem;
+}
+
+.testimonial h4 {
+    font-family: var(--font-primary);
+    font-weight: 600;
+    color: var(--accent-color);
+    font-size: 1rem;
+    text-align: right;
+}
+
+/* Pricing Section */
+.pricing-section {
+    background-color: var(--secondary-color);
+}
+
+.pricing-section > .container > p { /* Targeting the intro paragraph */
+    text-align: center;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3rem;
+    color: var(--text-color-secondary);
+}
+
+.pricing-calculator {
+    background-color: var(--card-background);
+    padding: 2.5rem;
+    border-radius: 8px;
+    max-width: 600px;
+    margin: 0 auto;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+    opacity: 0;
+    transform: translateY(20px);
+}
+.pricing-calculator.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+
+.calculator-controls, .currency-selector {
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.calculator-controls label, .currency-selector label {
+    font-weight: 600;
+    color: var(--text-color-primary);
+    flex-shrink: 0;
+}
+
+#daily-searches {
+    width: 100%;
+    accent-color: var(--accent-color); /* Styles the slider thumb and track */
+    cursor: pointer;
+}
+#daily-searches-value {
+    font-weight: 700;
+    color: var(--accent-color);
+    min-width: 30px; /* Prevents layout shift */
+    text-align: right;
+}
+
+#currency {
+    padding: 0.5rem;
+    border-radius: 4px;
+    background-color: var(--primary-color);
+    color: var(--text-color-primary);
+    border: 1px solid var(--border-color);
+    font-family: var(--font-primary);
+}
+
+.calculator-results p {
+    margin-bottom: 0.75rem;
+    font-size: 1rem;
+    color: var(--text-color-secondary);
+    display: flex;
+    justify-content: space-between;
+}
+.calculator-results p span {
+    font-weight: 600;
+    color: var(--text-color-primary);
+}
+.calculator-results h3 {
+    margin-top: 1.5rem;
+    font-size: 1.6rem;
+    color: var(--accent-color);
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+    padding-top: 1rem;
+}
+.calculator-results h3 span {
+    font-family: var(--font-secondary);
+}
+
+
+/* Final CTA Section */
+.final-cta-section {
+    background-color: var(--accent-color);
+    color: var(--primary-color);
+    text-align: center;
+    padding: 60px 0;
+}
+
+.final-cta-section h2 {
+    color: var(--primary-color);
+    font-size: 2.2rem;
+}
+.final-cta-section h2::after {
+    background-color: var(--primary-color); /* Adjust underline for contrast */
+}
+
+.final-cta-section p {
+    color: var(--secondary-color); /* Darker text on light background */
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+}
+
+.cta-button-secondary {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: var(--accent-color);
+    padding: 0.8rem 2rem;
+    border-radius: 5px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color var(--transition-speed), color var(--transition-speed), transform var(--transition-speed);
+    border: 2px solid var(--primary-color);
+}
+
+.cta-button-secondary:hover {
+    background-color: var(--secondary-color);
+    color: var(--accent-hover-color);
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Footer */
+.footer {
+    background-color: var(--secondary-color);
+    color: var(--text-color-secondary);
+    padding: 50px 0 30px;
+    border-top: 1px solid var(--border-color);
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+.footer-links > div {
+    opacity: 0;
+    transform: translateY(20px);
+}
+.footer-links > div.visible {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.footer-links > div.visible:nth-child(1) { transition-delay: 0.1s; }
+.footer-links > div.visible:nth-child(2) { transition-delay: 0.2s; }
+.footer-links > div.visible:nth-child(3) { transition-delay: 0.3s; }
+.footer-links > div.visible:nth-child(4) { transition-delay: 0.4s; }
+
+
+.footer h4 {
+    font-family: var(--font-primary); /* Match body font for footer subheadings */
+    font-size: 1.1rem;
+    color: var(--text-color-headings);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.footer ul {
+    list-style: none;
+}
+
+.footer ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer ul li a {
+    color: var(--text-color-secondary);
+    font-size: 0.95rem;
+}
+
+.footer ul li a:hover {
+    color: var(--accent-color);
+    padding-left: 5px; /* Subtle hover effect */
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.9rem;
+}
+
+.footer-bottom p {
+    margin-bottom: 0.25rem;
+}
+
+/* General Animation Class for Intersection Observer */
+.animated-element { /* Apply this to elements you want to animate on scroll */
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animated-element.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* Responsive Design (Continued) */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+
+    .navbar nav {
+        display: none; /* Hide nav links */
+        position: absolute;
+        top: 100%; /* Below navbar */
+        left: 0;
+        width: 100%;
+        background-color: var(--secondary-color); /* Solid background for mobile nav */
+        flex-direction: column;
+        padding: 1rem 0;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .navbar nav.active {
+        display: flex; /* Show when active */
+    }
+
+    .navbar nav ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar nav ul li {
+        margin: 0;
+        text-align: center;
+    }
+
+    .navbar nav ul li a {
+        display: block;
+        padding: 1rem;
+        border-bottom: 1px solid var(--border-color);
+    }
+     .navbar nav ul li a::after {
+        display: none; /* No underline animation on mobile nav items */
+    }
+
+    .navbar nav ul li:last-child a {
+        border-bottom: none;
+    }
+
+    .menu-toggle {
+        display: block; /* Show hamburger */
+    }
+
+    /* Hamburger animation to X */
+    .menu-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    .menu-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    .menu-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    .hero-section {
+        padding-top: 80px; /* Adjust for navbar */
+    }
+
+    .hero-section .subtitle {
+        font-size: 1.1rem;
+    }
+
+    section {
+        padding: 60px 0;
+    }
+
+    .container {
+        width: 95%;
+        padding: 0 15px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr; /* Stack features on mobile */
+        gap: 1.5rem;
+    }
+
+    .feature-item {
+        padding: 1.5rem;
+    }
+    .feature-item h3 {
+        font-size: 1.3rem;
+    }
+
+    .steps-container {
+        flex-direction: column; /* Stack steps on mobile */
+        gap: 1.5rem;
+    }
+
+    .step {
+        padding: 1.5rem;
+    }
+    .step h3 {
+        font-size: 1.25rem;
+    }
+
+    .testimonial-slider {
+        padding: 0 10px; /* Give some space if content is wide */
+    }
+    .testimonial {
+        padding: 1.5rem;
+    }
+    .testimonial p {
+        font-size: 1rem;
+    }
+
+    .pricing-calculator {
+        padding: 1.5rem;
+    }
+    .calculator-controls, .currency-selector {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    #daily-searches {
+        width: 100%;
+    }
+    .calculator-results h3 {
+        font-size: 1.4rem;
+    }
+
+    .final-cta-section h2 {
+        font-size: 1.8rem;
+    }
+    .final-cta-section p {
+        font-size: 1rem;
+    }
+
+    .footer-links {
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); /* Adjust for smaller screens */
+        gap: 1.5rem;
+    }
+    .footer h4 {
+        font-size: 1rem;
+    }
+    .footer ul li a {
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 1.75rem;
+        margin-bottom: 2rem;
+    }
+    h3 {
+        font-size: 1.4rem; /* General h3 adjustment */
+    }
+
+    .hero-section .subtitle {
+        font-size: 1rem;
+    }
+    .cta-button, .cta-button-secondary {
+        padding: 0.7rem 1.5rem;
+        font-size: 0.9rem;
+    }
+
+    .feature-item h3 {
+        font-size: 1.2rem;
+    }
+    .feature-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .step-number {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
+    }
+    .step h3 {
+        font-size: 1.15rem;
+    }
+
+    .pricing-calculator {
+        padding: 1rem;
+    }
+    .calculator-results p {
+        font-size: 0.9rem;
+    }
+     .calculator-results h3 {
+        font-size: 1.3rem;
+    }
+
+    .final-cta-section h2 {
+        font-size: 1.6rem;
+    }
+
+    .footer-links {
+        grid-template-columns: 1fr 1fr; /* Two columns for very small screens */
+        gap: 1rem;
+    }
+    .footer-bottom {
+        font-size: 0.8rem;
+    }
+}

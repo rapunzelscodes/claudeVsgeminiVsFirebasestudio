@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BAHA AI - Transform Data into Actionable Insights</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Exo+2:wght@700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <a href="#" class="logo">BAHA AI</a>
+            <nav>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#what-it-can-do">Features</a></li>
+                    <li><a href="#how-it-will-change-business">Impact</a></li>
+                    <li><a href="#how-to-use">Get Started</a></li>
+                    <li><a href="#testimonials">Testimonials</a></li>
+                    <li><a href="#pricing">Pricing</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="menu-toggle" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="container">
+                <h1>Transform Data into Actionable Insights</h1>
+                <p class="subtitle">BAHA AI's powerful search platform analyzes vast amounts of public data to deliver unparalleled intelligence for your business and research needs.</p>
+                <a href="#how-to-use" class="cta-button">Discover BAHA AI</a>
+            </div>
+        </section>
+
+        <section id="what-it-can-do" class="feature-section">
+            <div class="container">
+                <h2>What BAHA AI Can Do</h2>
+                <div class="features-grid">
+                    <div class="feature-item">
+                        <img src="placeholder-icon-search.svg" alt="Advanced Search Icon" class="feature-icon">
+                        <h3>Advanced Search Capabilities</h3>
+                        <p>Unlock insights from diverse public datasets with our sophisticated, AI-driven search algorithms.</p>
+                    </div>
+                    <div class="feature-item">
+                        <img src="placeholder-icon-processing.svg" alt="Data Processing Icon" class="feature-icon">
+                        <h3>Massive Data Processing</h3>
+                        <p>Leverage our high-performance infrastructure to process and analyze petabytes of data in real-time.</p>
+                    </div>
+                    <div class="feature-item">
+                        <img src="placeholder-icon-insights.svg" alt="Actionable Insights Icon" class="feature-icon">
+                        <h3>Actionable Intelligence</h3>
+                        <p>Convert raw data into clear, strategic insights that drive informed decision-making.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="how-it-will-change-business" class="impact-section">
+            <div class="container">
+                <h2>How BAHA AI Will Change Your Business</h2>
+                <p>Our platform's unparalleled computing power enables you to answer complex questions and fundamentally transform how your organization approaches strategic decisions. Move beyond traditional analytics and embrace the future of business intelligence.</p>
+            </div>
+        </section>
+
+        <section id="how-to-use" class="get-started-section">
+            <div class="container">
+                <h2>Simple Steps to Get Started</h2>
+                <div class="steps-container">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Sign Up in Minutes</h3>
+                        <p>Create your BAHA AI account quickly and easily. No complex setup required.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>Receive Free Credits</h3>
+                        <p>First-time users get complimentary credits to explore the full power of our platform.</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Unlock Insights</h3>
+                        <p>Start your search and witness how BAHA AI transforms data into valuable intelligence.</p>
+                    </div>
+                </div>
+                <a href="#pricing" class="cta-button">Explore Pricing & Sign Up</a>
+            </div>
+        </section>
+
+        <section id="testimonials" class="testimonials-section">
+            <div class="container">
+                <h2>Loved by Innovators</h2>
+                <div class="testimonial-slider">
+                    <div class="testimonial">
+                        <p>"BAHA AI has revolutionized our market research. The depth of analysis is incredible, and it's remarkably easy to use."</p>
+                        <h4>- Alex Chen, CEO of Innovatech</h4>
+                    </div>
+                    <div class="testimonial">
+                        <p>"The insights we've gained from BAHA AI have directly led to a 20% increase in operational efficiency. A game-changer!"</p>
+                        <h4>- Maria Rodriguez, Head of Strategy at Global Corp</h4>
+                    </div>
+                    <div class="testimonial">
+                        <p>"As a researcher, BAHA AI provides access to data and analytical power I previously only dreamed of. It's indispensable."</p>
+                        <h4>- Dr. Emily Carter, Lead Data Scientist</h4>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pricing" class="pricing-section">
+            <div class="container">
+                <h2>Flexible Pricing for Every Need</h2>
+                <p>Estimate your monthly cost with our transparent pricing calculator. Purchase search credits in convenient buckets and benefit from stacking discounts on bulk purchases.</p>
+                <div class="pricing-calculator">
+                    <div class="calculator-controls">
+                        <label for="daily-searches">Estimated Daily Searches:</label>
+                        <input type="range" id="daily-searches" name="daily-searches" min="1" max="1000" value="50" step="1">
+                        <span id="daily-searches-value">50</span>
+                    </div>
+                    <div class="currency-selector">
+                        <label for="currency">Currency:</label>
+                        <select id="currency" name="currency">
+                            <option value="USD" selected>USD ($)</option>
+                            <option value="EUR">EUR (€)</option>
+                            <option value="TRY">TRY (₺)</option>
+                            <option value="CNY">CNY (¥)</option>
+                        </select>
+                    </div>
+                    <div class="calculator-results">
+                        <p>Monthly Searches: <span id="monthly-searches">1500</span></p>
+                        <p>Original Price per Credit: <span id="original-price-credit">$0.15</span></p>
+                        <p>Discount Applied: <span id="discount-applied">0%</span></p>
+                        <p>Discounted Price per Credit: <span id="discounted-price-credit">$0.15</span></p>
+                        <h3>Total Monthly Cost: <span id="total-monthly-cost">$225.00</span></h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="final-cta" class="final-cta-section">
+            <div class="container">
+                <h2>Ready to Transform Your Data Strategy?</h2>
+                <p>Join the growing number of businesses and researchers leveraging BAHA AI to unlock unprecedented insights and drive innovation.</p>
+                <a href="#how-to-use" class="cta-button-secondary">Get Started with Free Credits</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-links">
+                <div>
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Resources</h4>
+                    <ul>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Case Studies</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Platform</h4>
+                    <ul>
+                        <li><a href="#">System Status</a></li>
+                        <li><a href="#">Updates</a></li>
+                        <li><a href="#">API Access</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> BAHA AI. All rights reserved.</p>
+                <p>Pioneering the Future of Intelligence.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
