@@ -17,6 +17,27 @@ Finish the design with a high-contrast final call-to-action section, emphasizing
 For the design, create an innovative and modern aesthetic that conveys technological advancement. Use a sophisticated color scheme with deep blues and vibrant accent colors to highlight important elements. Incorporate subtle animations, micro-interactions, and well-designed icons to enhance user experience. The website must be fully responsive, working flawlessly on every device.
 
 
+.
+.
+.
+
 ## Firebase studio 
 
 ![firebase-studio](https://github.com/user-attachments/assets/9b9d8a48-e394-4d8f-b091-ee69cf9a6f64)
+ 
+
+.
+.
+.
+
+## Claude  
+
+![Claude](https://github.com/user-attachments/assets/ec6acd63-1124-4c6b-9f3c-7c3265955577)
+
+.
+.
+.
+
+## Gemini  
+
+![gemini](https://github.com/user-attachments/assets/798f0f1e-8636-4d56-aae7-e1bd48cb2760)
