@@ -15,3 +15,8 @@ For the pricing calculator, BAHA AI offers search credits starting at $0.15, and
 Finish the design with a high-contrast final call-to-action section, emphasizing the benefits of choosing BAHA AI for business intelligence needs. Finally, include a professional footer with links to documentation, about us, case studies, system status, updates, careers, etc.
 
 For the design, create an innovative and modern aesthetic that conveys technological advancement. Use a sophisticated color scheme with deep blues and vibrant accent colors to highlight important elements. Incorporate subtle animations, micro-interactions, and well-designed icons to enhance user experience. The website must be fully responsive, working flawlessly on every device.
+
+
+## Firebase studio 
+
+![firebase-studio](https://github.com/user-attachments/assets/9b9d8a48-e394-4d8f-b091-ee69cf9a6f64)
